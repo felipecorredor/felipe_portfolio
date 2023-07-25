@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
+import SpaceManCanvas from "./canvas/SpaceManOrbit";
 
 const Hero = () => {
   return (
@@ -19,14 +20,15 @@ const Hero = () => {
             Hi, I am <span className="text-[#915EFF]">Felipe</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop user interfaces
+            I specialize in crafting user interfaces
             <br className="sm:block hidden" />
-            and web applications
+            web applications and hybrid applications.
           </p>
         </div>
       </div>
 
-      <ComputersCanvas />
+      {/* <ComputersCanvas /> */}
+      <SpaceManCanvas />
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
