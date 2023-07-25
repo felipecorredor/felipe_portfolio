@@ -11,9 +11,8 @@ const Earth = () => {
     <primitive
       object={earth.scene}
       scale={2.5}
-      position-y={0}
+      position={[0, -5, 0]}
       rotation-y={0}
-      position={[0, -3.25, -1.5]}
     />
   );
 };
@@ -26,16 +25,20 @@ const EarthCanvas = () => {
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
       camera={{
-        fov: 45,
+        fov: 30,
         near: 0.1,
-        far: 200,
-        position: [-7, 3, 6],
+        far: 300,
+        position: [15, 20, 6],
       }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls autoRotate enableRotate>
-          <Earth />
-        </OrbitControls>
+        <OrbitControls
+          autoRotate
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
+        <Earth />
 
         <Preload all />
       </Suspense>

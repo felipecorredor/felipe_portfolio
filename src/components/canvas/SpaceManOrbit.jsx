@@ -1,4 +1,4 @@
-import React, { forwardRef, useLayoutEffect, useRef } from "react";
+import React, { forwardRef, useLayoutEffect, useRef, Suspense } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
@@ -11,6 +11,7 @@ import {
   Backdrop,
   ContactShadows,
 } from "@react-three/drei";
+import CanvasLoader from "../Loader";
 
 const Spaceman = forwardRef(({ children, ...props }, ref) => {
   const { nodes, materials } = useGLTF("/Astronaut-transformed.glb");
@@ -111,48 +112,50 @@ const SpaceManCanvas = () => {
   const ship = useRef();
   return (
     <Canvas shadows camera={{ position: [0, 1.5, 3] }}>
-      <ambientLight intensity={0.2} />
-      <directionalLight position={[-10, 0, -5]} intensity={1} color="red" />
-      <directionalLight
-        position={[-1, -2, -5]}
-        intensity={0.2}
-        color="#0c8cbf"
-      />
-      <spotLight
-        position={[5, 0, 5]}
-        intensity={2.5}
-        penumbra={1}
-        angle={0.35}
-        castShadow
-        color="#0c8cbf"
-      />
+      <Suspense fallback={<CanvasLoader />}>
+        <ambientLight intensity={0.2} />
+        <directionalLight position={[-10, 0, -5]} intensity={1} color="red" />
+        <directionalLight
+          position={[-1, -2, -5]}
+          intensity={0.2}
+          color="#0c8cbf"
+        />
+        <spotLight
+          position={[5, 0, 5]}
+          intensity={2.5}
+          penumbra={1}
+          angle={0.35}
+          castShadow
+          color="#0c8cbf"
+        />
 
-      <Float scale={0.75} position={[0, -0.3, 0]} rotation={[0, 0.6, 0]}>
-        <PivotControls
-          anchor={[0, 0.7, 0.09]}
-          depthTest={true}
-          scale={0.5}
-          lineWidth={2}
+        <Float scale={0.75} position={[0, -0.3, 0]} rotation={[0, 0.6, 0]}>
+          <PivotControls
+            anchor={[0, 0.7, 0.09]}
+            depthTest={true}
+            scale={0.5}
+            lineWidth={2}
+          >
+            <Ship ref={ship} />
+          </PivotControls>
+        </Float>
+
+        <Float
+          position={[2, 0.5, -0.1]}
+          rotation={[Math.PI / 3.5, 0, 0]}
+          rotationIntensity={4}
+          floatIntensity={6}
+          speed={1.5}
         >
-          <Ship ref={ship} />
-        </PivotControls>
-      </Float>
+          <Spaceman scale={0.2}>
+            <object3D position={[-0.2, 2, 0]} ref={spaceman} />
+          </Spaceman>
+        </Float>
+        <Cable start={ship} end={spaceman} />
 
-      <Float
-        position={[2, 0.5, -0.1]}
-        rotation={[Math.PI / 3.5, 0, 0]}
-        rotationIntensity={4}
-        floatIntensity={6}
-        speed={1.5}
-      >
-        <Spaceman scale={0.2}>
-          <object3D position={[-0.2, 2, 0]} ref={spaceman} />
-        </Spaceman>
-      </Float>
-      <Cable start={ship} end={spaceman} />
-
-      <Environment preset="city" />
-      <OrbitControls makeDefault />
+        <Environment preset="city" />
+        <OrbitControls makeDefault />
+      </Suspense>
     </Canvas>
   );
 };
