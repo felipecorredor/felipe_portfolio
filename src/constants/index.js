@@ -143,6 +143,16 @@ const experiences = [
     ],
   },
   {
+    title: "Full Stack Developer",
+    company_name: "University of Manizales",
+    icon: universityManizales,
+    iconBg: "#FFFFFF",
+    date: "Jan. 2023 - Currently",
+    points: [
+      "As a teacher, I have had the opportunity to teach both online and in person, creating projects of great educational value. My approach has been to foster an enriching learning environment, stimulating the development of skills and abilities in my students.",
+    ],
+  },
+  {
     title: "Frontend Developer",
     company_name: "Evolve",
     icon: evolve,
@@ -151,16 +161,6 @@ const experiences = [
     points: [
       "Front-end developer tasked with creating new features to help contractors, mechanical, electrical and plumbing equipment automate construction design workflows.",
       "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full Stack Developer",
-    company_name: "University of Manizales",
-    icon: universityManizales,
-    iconBg: "#FFFFFF",
-    date: "Jan. 2023 - Currently",
-    points: [
-      "As a teacher, I have had the opportunity to teach both online and in person, creating projects of great educational value. My approach has been to foster an enriching learning environment, stimulating the development of skills and abilities in my students.",
     ],
   },
   {
@@ -319,6 +319,7 @@ const projects = [
       },
     ],
     image: spotifyClone,
+    url_project: "https://spotify-vercel-app.vercel.app/",
     source_code_link: "https://github.com/felipecorredor/spotify-clone",
   },
 ];
