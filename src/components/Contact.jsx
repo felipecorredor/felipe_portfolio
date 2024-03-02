@@ -58,11 +58,9 @@ const FormSection = ({ setMessageAlert, setIsOpenAlert }) => {
     }
   };
 
-  console.log("errors===>", errors);
-
   return (
     <form
-      autocomplete="off"
+      autoComplete="off"
       onSubmit={handleSubmit(onSubmit)}
       className="mt-12 flex flex-col gap-8"
     >

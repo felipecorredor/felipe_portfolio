@@ -37,10 +37,14 @@ import ultimMarketing from "./company/ultim_marketing.jpeg";
 import solutionSystems from "./company/solution_systems.jpeg";
 import devWay from "./company/dev_way.jpeg";
 import devpenguin from "./company/devpenguin.jpeg";
+import wizeline from "./company/wizeline.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import airbnbClone from "./projects/airbnb-clone.png";
+import disneyClone from "./projects/disney-clone.png";
+import spotifyClone from "./projects/spotify-clone.png";
 
 import stivenCastillo from "./testimonials/stiven_castillo.jpeg";
 import nicolasMoreno from "./testimonials/nicolas_moreno.jpeg";
@@ -79,6 +83,7 @@ export {
   solutionSystems,
   devWay,
   devpenguin,
+  wizeline,
   carrent,
   jobit,
   tripguide,
@@ -90,4 +95,7 @@ export {
   stivenCastillo,
   nicolasMoreno,
   simonTorres,
+  airbnbClone,
+  disneyClone,
+  spotifyClone,
 };

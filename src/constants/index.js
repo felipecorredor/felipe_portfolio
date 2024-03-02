@@ -9,7 +9,6 @@ import {
   css,
   reactjs,
   redux,
-  tailwind,
   nodejs,
   nextJs,
   mongodb,
@@ -24,9 +23,10 @@ import {
   solutionSystems,
   devWay,
   devpenguin,
-  carrent,
-  jobit,
-  tripguide,
+  wizeline,
+  airbnbClone,
+  disneyClone,
+  spotifyClone,
   stivenCastillo,
   nicolasMoreno,
   simonTorres,
@@ -40,6 +40,14 @@ export const navLinks = [
   {
     id: "experience",
     title: "Work",
+  },
+  {
+    id: "tech",
+    title: "Tech",
+  },
+  {
+    id: "projects",
+    title: "Projects",
   },
   {
     id: "contact",
@@ -123,11 +131,23 @@ const technologies = [
 
 const experiences = [
   {
+    title: "Senior Software Engineer",
+    company_name: "WizeLine S.A.S",
+    icon: wizeline,
+    iconBg: "#222222",
+    date: "Agu. 2023 - Currently",
+    points: [
+      "Develop high-quality code in accordance with industry standards and best practices.",
+      "Collaborate with project managers, business analysts, and other stakeholders to ensure alignment between technical solutions and business objectives.",
+      "Stay abreast of emerging technologies and industry trends, providing recommendations for innovative solutions to client challenges.",
+    ],
+  },
+  {
     title: "Frontend Developer",
     company_name: "Evolve",
     icon: evolve,
     iconBg: "#222222",
-    date: "Jul. 2022 - Currently",
+    date: "Jul. 2022 - Agu. 2023",
     points: [
       "Front-end developer tasked with creating new features to help contractors, mechanical, electrical and plumbing equipment automate construction design workflows.",
       "Participating in code reviews and providing constructive feedback to other developers.",
@@ -228,67 +248,78 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Airbnb Clone",
     description:
       "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
     tags: [
       {
-        name: "react",
+        name: "Next JS",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "NextAuth",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Prisma",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Tailwind",
         color: "pink-text-gradient",
       },
+      {
+        name: "Mongo DB",
+        color: "green-text-gradient",
+      },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: airbnbClone,
+    url_project: "https://next13-airbnb-clone-two-mu.vercel.app/",
+    source_code_link:
+      "https://github.com/felipecorredor/next13-airbnb-clone/tree/main",
   },
   {
-    name: "Job IT",
+    name: "Disney Clone",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Welcome to our Disney-inspired platform, where the magic of imagination comes to life. Dive into a world of enchantment, adventure, and endless possibilities as you explore our collection of whimsical experiences and attractions.",
     tags: [
       {
-        name: "react",
+        name: "React JS",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "Tailwind",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "Vite",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: disneyClone,
+    url_project: "https://disneyplus-clone-e7469.web.app/",
+    source_code_link: "https://github.com/felipecorredor/disneyplus-clone",
   },
   {
-    name: "Trip Guide",
+    name: "Spotify Clone",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Spotify clone project is a passion-driven endeavor aimed at replicating the core features and user experience of the renowned music streaming platform, Spotify",
     tags: [
       {
-        name: "nextjs",
+        name: "Astro",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "Tailwind",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "TypeScript",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: spotifyClone,
+    source_code_link: "https://github.com/felipecorredor/spotify-clone",
   },
 ];
 
@@ -296,7 +327,7 @@ const SECTIONS = {
   ABOUT: "about",
   TECH: "tech",
   EXPERIENCE: "experience",
-  WORK: "work",
+  PROJECTS: "projects",
   FEEDBACKS: "feedbacks",
   CONTACT: "contact",
 };
